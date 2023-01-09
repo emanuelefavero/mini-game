@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Game</title>
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P:regular"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P:regular"
+      rel="stylesheet"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- GAME TITLE -->
     <h2 class="title">Mini Game</h2>
     <!-- GAME CANVAS -->
     <div class="canvas-container">
-        <div class="canvas" id="canvas">
-            <!-- PLAYER -->
-            <div class="player" id="player"></div>
-            <!-- ENEMY -->
-            <div class="enemy" id="enemy"></div>
-            <!-- GAME OVER TEXT -->
-            <div class="game-over-text">Game Over!</div>
-            <!-- SCORE TEXT -->
-            <div class="score-text">0</div>
+      <div class="canvas" id="canvas">
+        <!-- PLAYER -->
+        <div class="player" id="player"></div>
+        <!-- ENEMY -->
+        <div class="enemy" id="enemy"></div>
+        <!-- GAME OVER TEXT -->
+        <div class="game-over-text">Game Over!</div>
+        <!-- SCORE TEXT -->
+        <div class="score-text">0</div>
+        <!-- HOW TO TEXT -->
+        <div class="how-to-text">
+          <p>Use Arrow Keys or swipe to move your player</p>
         </div>
+      </div>
     </div>
     <!-- PLAY BUTTON -->
     <button class="play-button" id="playButton">Play</button>
-    <!-- HOW TO TEXT -->
-    <div class="how-to-text">
-        <p>Use Arrow Keys or swipe to move your player</p>
-    </div>
 
     <!-- JAVASCRIPT -->
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
