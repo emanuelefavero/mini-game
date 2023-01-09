@@ -131,12 +131,23 @@ body {
   position: absolute;
   font-size: 1.25rem;
   left: 65px;
-  top: 150px;
+  top: calc(150px - 1.25rem);
   text-transform: uppercase;
   color: rgb(54, 80, 1);
   background: rgba(255, 255, 255, 0.212);
   padding: 0.4rem 0.4rem;
   animation: game-over-blink 1s steps(2) infinite;
+  display: none;
+}
+
+.game-over-score-text {
+  position: absolute;
+  font-size: 1.25rem;
+  left: 65px;
+  top: calc(150px + 2rem);
+  text-transform: uppercase;
+  color: rgb(54, 80, 1);
+  padding: 0.4rem 0.4rem;
   display: none;
 }
 
@@ -154,16 +165,13 @@ body {
 .how-to-text {
   position: relative;
   padding: 3rem;
-  /* top: 1.8rem; */
-  /* left: 1.2rem; */
 }
 
 .how-to-text p {
   font-size: 0.875rem;
   max-width: 30ch;
   line-height: 1.5rem;
-  /* color: rgb(48, 75, 1); */
-  color: rgb(57, 87, 1);
+  color: rgb(48, 75, 1);
 }
 
 /* SCORE TEXT */

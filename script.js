@@ -1,15 +1,14 @@
-// DECLARE const
+// DECLARE VARIABLES
 const canvas = document.querySelector('#canvas')
 const player = document.querySelector('#player')
 const enemy = document.querySelector('#enemy')
 const playButton = document.querySelector('#playButton')
 const gameOverText = document.querySelector('.game-over-text')
+const gameOverScoreText = document.querySelector('.game-over-score-text')
 const howToText = document.querySelector('.how-to-text')
 const scoreText = document.querySelector('.score-text')
 
-// DECLARE let
 // Player
-// let moveUpDown = 0
 let moveLeftRight = 0
 // Enemy
 let moveDown = 0
@@ -70,16 +69,6 @@ function playGame() {
 
   // ARROW KEYS EVENT LISTENER
   window.addEventListener('keydown', (event) => {
-    // if (event.key === 'ArrowUp') {
-    //   // MOVE PLAYER UP
-    //   moveUpDown += 30
-    //   player.style.marginBottom = moveUpDown + 'px'
-
-    //   // STOP PLAYER FROM GOING OUT OF CANVAS (TOP)
-    //   if (moveUpDown >= 300) {
-    //     moveUpDown = 300 - 30
-    //   }
-    // }
     if (event.key === 'ArrowRight') {
       // MOVE PLAYER RIGHT
       moveLeftRight += 30
@@ -90,16 +79,7 @@ function playGame() {
         moveLeftRight = 160 - 20
       }
     }
-    // if (event.key === 'ArrowDown') {
-    //   // MOVE PLAYER DOWN
-    //   moveUpDown -= 30
-    //   player.style.marginBottom = moveUpDown + 'px'
 
-    //   // STOP PLAYER FROM GOING OUT OF CANVAS (BOTTOM)
-    //   if (moveUpDown <= 0) {
-    //     moveUpDown = 0
-    //   }
-    // }
     if (event.key === 'ArrowLeft') {
       // MOVE PLAYER LEFT
       moveLeftRight -= 30
@@ -169,22 +149,6 @@ function playGame() {
     }
   })(document)
 
-  // SWIPE UP
-  // document.body.addEventListener(
-  //   'swu',
-  //   () => {
-  //     // MOVE PLAYER UP
-  //     moveUpDown += 80
-  //     player.style.marginBottom = moveUpDown + 'px'
-
-  //     // STOP PLAYER FROM GOING OUT OF CANVAS (TOP)
-  //     if (moveUpDown >= 280) {
-  //       // alert(moveUpDown);
-  //       moveUpDown = 300 - 80
-  //     }
-  //   },
-  //   false
-  // )
   // SWIPE RIGHT
   document.body.addEventListener(
     'swr',
@@ -201,22 +165,7 @@ function playGame() {
     },
     false
   )
-  // SWIPE DOWN
-  // document.body.addEventListener(
-  //   'swd',
-  //   () => {
-  //     // MOVE PLAYER DOWN
-  //     if (moveUpDown > 0) {
-  //       moveUpDown -= 80
-  //       player.style.marginBottom = moveUpDown + 'px'
-  //       // STOP PLAYER FROM GOING OUT OF CANVAS (BOTTOM)
-  //       if (moveUpDown <= -0) {
-  //         moveUpDown = 0
-  //       }
-  //     }
-  //   },
-  //   false
-  // )
+
   // SWIPE LEFT
   document.body.addEventListener(
     'swl',
@@ -260,8 +209,8 @@ function playGame() {
       player.style.height = 0 + 'px'
       enemy.style.display = 'none'
       gameOverText.style.display = 'block'
-
-      console.log(score)
+      gameOverScoreText.textContent = 'Score: ' + score
+      gameOverScoreText.style.display = 'block'
 
       setTimeout(() => {
         location.reload()
