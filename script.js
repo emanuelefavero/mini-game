@@ -9,7 +9,7 @@ const scoreText = document.querySelector('.score-text')
 
 // DECLARE let
 // Player
-let moveUpDown = 0
+// let moveUpDown = 0
 let moveLeftRight = 0
 // Enemy
 let moveDown = 0
@@ -70,16 +70,16 @@ function playGame() {
 
   // ARROW KEYS EVENT LISTENER
   window.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowUp') {
-      // MOVE PLAYER UP
-      moveUpDown += 30
-      player.style.marginBottom = moveUpDown + 'px'
+    // if (event.key === 'ArrowUp') {
+    //   // MOVE PLAYER UP
+    //   moveUpDown += 30
+    //   player.style.marginBottom = moveUpDown + 'px'
 
-      // STOP PLAYER FROM GOING OUT OF CANVAS (TOP)
-      if (moveUpDown >= 300) {
-        moveUpDown = 300 - 30
-      }
-    }
+    //   // STOP PLAYER FROM GOING OUT OF CANVAS (TOP)
+    //   if (moveUpDown >= 300) {
+    //     moveUpDown = 300 - 30
+    //   }
+    // }
     if (event.key === 'ArrowRight') {
       // MOVE PLAYER RIGHT
       moveLeftRight += 30
@@ -90,16 +90,16 @@ function playGame() {
         moveLeftRight = 160 - 20
       }
     }
-    if (event.key === 'ArrowDown') {
-      // MOVE PLAYER DOWN
-      moveUpDown -= 30
-      player.style.marginBottom = moveUpDown + 'px'
+    // if (event.key === 'ArrowDown') {
+    //   // MOVE PLAYER DOWN
+    //   moveUpDown -= 30
+    //   player.style.marginBottom = moveUpDown + 'px'
 
-      // STOP PLAYER FROM GOING OUT OF CANVAS (BOTTOM)
-      if (moveUpDown <= 0) {
-        moveUpDown = 0
-      }
-    }
+    //   // STOP PLAYER FROM GOING OUT OF CANVAS (BOTTOM)
+    //   if (moveUpDown <= 0) {
+    //     moveUpDown = 0
+    //   }
+    // }
     if (event.key === 'ArrowLeft') {
       // MOVE PLAYER LEFT
       moveLeftRight -= 30
@@ -116,8 +116,11 @@ function playGame() {
   // TOUCH HANDLER EVENTS CODE
   ;(function (d) {
     var ce = function (e, n) {
-        var a = document.createEvent('CustomEvent')
-        a.initCustomEvent(n, true, true, e.target)
+        var a = new CustomEvent(n, {
+          bubbles: true,
+          cancelable: true,
+          detail: e.target,
+        })
         e.target.dispatchEvent(a)
         a = null
         return false
@@ -150,11 +153,9 @@ function playGame() {
             ce(e, 'fc')
           } else {
             var x = ep.x - sp.x,
-              xr = Math.abs(x),
-              y = ep.y - sp.y,
-              yr = Math.abs(y)
-            if (Math.max(xr, yr) > 20) {
-              ce(e, xr > yr ? (x < 0 ? 'swl' : 'swr') : y < 0 ? 'swu' : 'swd')
+              xr = Math.abs(x)
+            if (xr > 20) {
+              ce(e, x < 0 ? 'swl' : 'swr')
             }
           }
           nm = true
@@ -169,21 +170,21 @@ function playGame() {
   })(document)
 
   // SWIPE UP
-  document.body.addEventListener(
-    'swu',
-    () => {
-      // MOVE PLAYER UP
-      moveUpDown += 80
-      player.style.marginBottom = moveUpDown + 'px'
+  // document.body.addEventListener(
+  //   'swu',
+  //   () => {
+  //     // MOVE PLAYER UP
+  //     moveUpDown += 80
+  //     player.style.marginBottom = moveUpDown + 'px'
 
-      // STOP PLAYER FROM GOING OUT OF CANVAS (TOP)
-      if (moveUpDown >= 280) {
-        // alert(moveUpDown);
-        moveUpDown = 300 - 80
-      }
-    },
-    false
-  )
+  //     // STOP PLAYER FROM GOING OUT OF CANVAS (TOP)
+  //     if (moveUpDown >= 280) {
+  //       // alert(moveUpDown);
+  //       moveUpDown = 300 - 80
+  //     }
+  //   },
+  //   false
+  // )
   // SWIPE RIGHT
   document.body.addEventListener(
     'swr',
@@ -201,21 +202,21 @@ function playGame() {
     false
   )
   // SWIPE DOWN
-  document.body.addEventListener(
-    'swd',
-    () => {
-      // MOVE PLAYER DOWN
-      if (moveUpDown > 0) {
-        moveUpDown -= 80
-        player.style.marginBottom = moveUpDown + 'px'
-        // STOP PLAYER FROM GOING OUT OF CANVAS (BOTTOM)
-        if (moveUpDown <= -0) {
-          moveUpDown = 0
-        }
-      }
-    },
-    false
-  )
+  // document.body.addEventListener(
+  //   'swd',
+  //   () => {
+  //     // MOVE PLAYER DOWN
+  //     if (moveUpDown > 0) {
+  //       moveUpDown -= 80
+  //       player.style.marginBottom = moveUpDown + 'px'
+  //       // STOP PLAYER FROM GOING OUT OF CANVAS (BOTTOM)
+  //       if (moveUpDown <= -0) {
+  //         moveUpDown = 0
+  //       }
+  //     }
+  //   },
+  //   false
+  // )
   // SWIPE LEFT
   document.body.addEventListener(
     'swl',
