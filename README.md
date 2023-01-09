@@ -13,7 +13,7 @@ A mini game built with HTML, CSS, Javascript
 ## How to play
 
 1. Click the play button or press the space bar to start the game
-2. Use the arrow keys on Desktop or swipe on mobile to move the player left and right
+2. Use the arrow keys on desktop or swipe on mobile to move the player left and right
 3. Avoid the obstacles
 
 > Note: The enemies will move faster as you progress through the game
@@ -27,4 +27,4 @@ A mini game built with HTML, CSS, Javascript
 
 ## License
 
-- [MIT](LICENSE)
+- [MIT](./LICENSE.md)
