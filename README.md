@@ -24,3 +24,7 @@ A mini game built with HTML, CSS, Javascript
 
 1. Clone the repo
 2. Open the index.html file in your browser
+
+## License
+
+- [MIT](LICENSE)
