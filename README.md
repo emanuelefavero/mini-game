@@ -2,6 +2,10 @@
 
 A mini game built with HTML, CSS, Javascript
 
+#### Screenshot
+
+<img src="screenshot.png" alt="screenshot" width="300">
+
 ## How to play
 
 1. Click the play button or press the space bar to start the game
