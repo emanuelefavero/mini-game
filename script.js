@@ -15,10 +15,25 @@ let moveLeftRight = 0
 let moveDown = 0
 let randomizePosition = Math.floor(Math.random() * 300)
 let moveDownSpeed = 40
-
 let score = 0
 
-playButton.addEventListener('click', playGame)
+// PLAY GAME
+let gamePlaying = false
+
+playButton.addEventListener('click', () => {
+  playGame()
+  gamePlaying = true
+})
+
+// Play Game if user press space bar or enter key
+window.addEventListener('keydown', (event) => {
+  if (!gamePlaying) {
+    if (event.key === ' ' || event.key === 'Enter') {
+      playGame()
+      gamePlaying = true
+    }
+  }
+})
 
 function playGame() {
   playButton.style.display = 'none'
@@ -55,7 +70,7 @@ function playGame() {
 
   // ARROW KEYS EVENT LISTENER
   window.addEventListener('keydown', (event) => {
-    if (event.keyCode === 38) {
+    if (event.key === 'ArrowUp') {
       // MOVE PLAYER UP
       moveUpDown += 30
       player.style.marginBottom = moveUpDown + 'px'
@@ -65,7 +80,7 @@ function playGame() {
         moveUpDown = 300 - 30
       }
     }
-    if (event.keyCode === 39) {
+    if (event.key === 'ArrowRight') {
       // MOVE PLAYER RIGHT
       moveLeftRight += 30
       player.style.marginLeft = moveLeftRight + 'px'
@@ -75,7 +90,7 @@ function playGame() {
         moveLeftRight = 160 - 20
       }
     }
-    if (event.keyCode === 40) {
+    if (event.key === 'ArrowDown') {
       // MOVE PLAYER DOWN
       moveUpDown -= 30
       player.style.marginBottom = moveUpDown + 'px'
@@ -85,7 +100,7 @@ function playGame() {
         moveUpDown = 0
       }
     }
-    if (event.keyCode === 37) {
+    if (event.key === 'ArrowLeft') {
       // MOVE PLAYER LEFT
       moveLeftRight -= 30
       player.style.marginLeft = moveLeftRight + 'px'
@@ -98,7 +113,7 @@ function playGame() {
   })
 
   // MOBILE SWIPE EVENTS
-  // TOUCH HANDLEr EVENTS CODE
+  // TOUCH HANDLER EVENTS CODE
   ;(function (d) {
     var ce = function (e, n) {
         var a = document.createEvent('CustomEvent')
