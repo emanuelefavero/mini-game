@@ -2,6 +2,10 @@
 
 A mini game built with HTML, CSS, Javascript
 
+## Demo
+
+[Play Now](https://emanuelefavero.github.io/mini-game/)
+
 #### Screenshot
 
 <img src="screenshot.png" alt="screenshot" width="300">
